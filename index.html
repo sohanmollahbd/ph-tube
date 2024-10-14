@@ -11,13 +11,13 @@
 </head>
 
 <body>
-   <header>
-      <nav class="w-11/12 mx-auto py-3 flex justify-between items-center border-b" >
+   <header class="sticky top-0 ">
+      <nav class="w-11/12 mx-auto py-3 flex justify-between items-center border-b z-50 bg-white" >
          <div class="logo w-[100px]">
             <img  src="./assets/Logo.png" alt="">
          </div>
          <div class="search">
-            <label class="input input-bordered flex items-center gap-2">
+            <label class="input input-bordered flex items-center gap-2 w-[140px] md:w-[250px]">
                <input type="text" class="grow" placeholder="Search" />
                <svg
                  xmlns="http://www.w3.org/2000/svg"
@@ -37,11 +37,11 @@
       </nav>
    </header>
 
-   <nav id="categories" class="py-3 flex gap-5 justify-center"></nav>
+   <nav id="categories" class="py-3 flex gap-5 justify-center sticky top-[73px] bg-white "></nav>
 
 
    <main>
-      <section id="videos" class="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 py-10"></section>
+      <section id="videos" class="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 py-10 "></section>
    </main>
 
    <script src="./scripts/video.js"></script>

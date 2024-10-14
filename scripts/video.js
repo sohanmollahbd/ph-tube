@@ -62,13 +62,32 @@ const loadCategoryVideos = (id) => {
 
 const displayVideos = (videos) => {
   const videosContainer = document.getElementById("videos");
-  videosContainer.innerHTML ="";
+  videosContainer.innerHTML = "";
+  // no contents available
+  if (videos.length == 0) {
+    videosContainer.classList.remove("grid");
+    videosContainer.innerHTML = `
+    <div class="min-h-[300px] flex  flex-col gap-5 justify-center items-center ">
+      <img src="assets/icon.png" />
+
+      <h2 class="text-center text-xl font-bold">
+        NO contents here in this category
+      </h2>
+
+    </div>
+    `;
+    return;
+  } else {
+    videosContainer.classList.add("grid");
+  }
+
   videos.forEach((video) => {
     console.log(video);
     const card = document.createElement("div");
     card.classList = "card card-compact";
     card.innerHTML = `
-        <figure class="h-[200px] relative">
+        <div class="-z-10">
+          <figure class="h-[200px] relative">
         <img class="h-full w-full object-cover"
           src=${video.thumbnail}
           alt="Shoes" />
@@ -101,6 +120,7 @@ const displayVideos = (videos) => {
         </div>
         
       </div>
+        </div>
     `;
     videosContainer.append(card);
   });
